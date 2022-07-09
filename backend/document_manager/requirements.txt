@@ -1,0 +1,6 @@
+# All
+fastapi
+uvicorn
+pydantic
+# Document service
+pymongo[srv]
