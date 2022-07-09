@@ -1,0 +1,23 @@
+services:
+  homepage:
+    build: backend/homepage
+    restart: always
+  document_manager:
+    build: backend/document_manager
+    restart: always
+    depends_on:
+      - mongo
+  # frontend:
+  #   build: frontend/
+  #   restart: always
+  #   depends_on:
+  #     - document_manager
+  #     - homepage
+  proxy:
+    build: proxy
+    ports:
+      - 80:80
+    restart: always
+  mongo:
+    image: mongo
+    restart: always
