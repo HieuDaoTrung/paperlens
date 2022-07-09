@@ -1,0 +1,2 @@
+DOCUMENT_MANAGER: "http://document_manager:8000"
+DOCUMENT_MANAGER_TMP: "http://localhost:8000/documents/handins"
