@@ -39,4 +39,4 @@ class UpdatedHandInModel(BaseModel):
     author: Optional[str]
     description: Optional[str]
     content: Optional[str]
-    tags: Optional[str]
+    tags: Optional[list[str]]

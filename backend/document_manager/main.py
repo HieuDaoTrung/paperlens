@@ -68,7 +68,7 @@ async def get_single_doc(collection_name: str, document_id: str):
 async def update_document(collection_name: str, document_id: str, updates: UpdatedHandInModel):
     """Update a single document"""
     collection = db[collection_name]
-    updates = {k: v for k, v in updates.dict.items() if v is not None}  # type:ignore
+    updates = {k: v for k, v in updates.dict().items() if v is not None}  # type:ignore
     result = collection.update_one({"_id": document_id}, {"$set": updates})
     if result.acknowledged:
         return collection.find_one(document_id, projection={"_id": 0})
