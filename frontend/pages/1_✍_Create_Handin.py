@@ -28,7 +28,7 @@ def create_HandIn(doc: HandIn):
     payload = doc.json()
     response = requests.request(
         method="POST",
-        url=cfg.DOCUMENT_MANAGER_TMP,
+        url=cfg.DOCUMENT_MANAGER,
         headers=headers,
         data=payload
     )

@@ -6,17 +6,21 @@ services:
     build: backend/document_manager
     restart: always
     depends_on:
+      - homepage
       - mongo
-  # frontend:
-  #   build: frontend/
-  #   restart: always
-  #   depends_on:
-  #     - document_manager
-  #     - homepage
+  frontend:
+    build: frontend/
+    container_name: frontend
+    ports:
+      - "8501:8501"
+    restart: always
+    depends_on:
+      - homepage
+      - document_manager
   proxy:
     build: proxy
     ports:
-      - 80:80
+      - "80:80"
     restart: always
   mongo:
     image: mongo

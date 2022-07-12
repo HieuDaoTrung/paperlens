@@ -1,3 +1,4 @@
 streamlit
+pydantic
 pyyaml
 python-box
